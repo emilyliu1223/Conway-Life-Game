@@ -47,10 +47,8 @@ import io.jenetics.util.RandomRegistry;
 	        List<Point> points=new ArrayList<Point>();
 	        String[] g=result.toString().split("\\|");
 	       
-	        System.out.println(Arrays.toString(g));
+	       // System.out.println(Arrays.toString(g));
 	      
-
-	        System.out.println(fit(g));
 //	        for(int i=0;i<fit(g).size();i++) {
 //	        	mutation(fit(g).get(i));
 //	        }
@@ -94,7 +92,7 @@ import io.jenetics.util.RandomRegistry;
 	        points.add(p);
 	        
 	        final Game.Behavior generations=Game.run(10, points,1000);
-	        System.out.println(generations.growth);
+	       System.out.println(generations.growth);
 	        for(int i=0;i<fit(g).size();i++) {
 	        	mutation(fit(g).get(i));
 	        }
@@ -103,6 +101,7 @@ import io.jenetics.util.RandomRegistry;
 	        RandomRegistry.setRandom(new Random(seed));
 	        
 	        	}
+	       
 	       
 	       
 	     //   final Game.Behavior generations=Game.run(100, points);
@@ -165,7 +164,7 @@ import io.jenetics.util.RandomRegistry;
 	        		max=fitness;
 	        		kk=str;
                 	}
-	        	if(count ==5){
+	        	if(count ==2){
 	        		count = 0;
 	        		max = 0;
 	        		b.add(kk);
@@ -191,7 +190,7 @@ import io.jenetics.util.RandomRegistry;
 	    
 	    
 	    //customiz mutation
-	    public  static void mutation(String kk) {
+	    public  static String mutation(String kk) {
 	    	Random rr=new Random();
 	 
 	    	switch(rr.nextInt(9)) {
@@ -225,7 +224,8 @@ import io.jenetics.util.RandomRegistry;
 	    	case 8:
 	    		break;
 	    	   }
-	
+			return kk;
+		
 	    }
 
 	    }
