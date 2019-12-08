@@ -15,7 +15,7 @@ import io.jenetics.BitChromosome;
 	import io.jenetics.util.Factory;
 import io.jenetics.util.RandomRegistry;
 	 
-	public class HelloWorld {
+	public class Life {
 		private static final String LIFE = "@";
 	    private static final String DEATH = ".";
 	    // 2.) Definition of the fitness function.
@@ -35,7 +35,7 @@ import io.jenetics.util.RandomRegistry;
 	            Genotype.of(BitChromosome.of(100, 0.5),3);
   
 	        Engine<BitGene, Integer> engine = Engine
-	            .builder(HelloWorld::eval, gtf)
+	            .builder(Life::eval, gtf)
 	            .build();
 	 
 	        Genotype<BitGene> result = engine.stream()
@@ -175,6 +175,8 @@ import io.jenetics.util.RandomRegistry;
 	        
 	        return b;
 	        }
+	    
+	    //eval function
 	    public static int calcFitness(String g) {
 
 	       int fitness = 0;
@@ -186,6 +188,9 @@ import io.jenetics.util.RandomRegistry;
 	        
 	        return fitness;
 	    }
+	    
+	    
+	    //customiz mutation
 	    public  static void mutation(String kk) {
 	    	Random rr=new Random();
 	 
